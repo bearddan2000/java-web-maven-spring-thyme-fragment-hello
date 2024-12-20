@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring web example</title>
+    <div th:replace="fragments/header :: header"></div>
 </head>
 <body>
-    <center>
+    <div th:replace="fragments/nav :: nav"></div>
+    <div class="container">
         <h1>Hello World</h1>
-    </center>    
+    </div>
+    <div class="container" id="greet"></div>
+    <div class="container">
+        <ul th:each="data : ${list}">
+            <li th:text="${data}"></li>
+        </ul>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>
